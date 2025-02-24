@@ -31,7 +31,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       deviceType === "mobile" ? "1" : "0"
     );
   }, []);
-  const path = Router?.router?.state?.pathname?.split("/") || "";
+
+  // **Perbaikan kode di sini**
+  const path = router.pathname.split("/") || "";
   const isPageLogin = router.pathname.startsWith("/login");
 
   return (
